@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LikeWidgetComponent } from './like-widget.component';
 import { LikeWidgetModule } from './like-widget.module';
 
-describe(LikeWidgetComponent.name, () => {
+describe('LikeWidgetComponent', () => {
   let fixture: ComponentFixture<LikeWidgetComponent> = null;
   let component: LikeWidgetComponent = null;
 
@@ -31,8 +31,7 @@ describe(LikeWidgetComponent.name, () => {
     expect(component.id).toBe(someId);
   });
 
-  it(`#${LikeWidgetComponent.prototype.like.name}
-    should trigger (@Output liked) when called`, () => {
+  it(`#like should trigger (@Output liked) when called`, () => {
       spyOn(component.liked, 'emit');
       fixture.detectChanges();
       component.like();
