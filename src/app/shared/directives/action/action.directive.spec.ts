@@ -18,6 +18,7 @@ describe('ActionDirective', () => {
 
     it('(D) (@Output appAction) should emit event with payload when ENTER key is pressed', () => {
         // Usando debugElement no lugar de debugElement para buscar por uma diretiva ao invés de buscar por uma classe
+        // OBS: o "By" passado como parâmetro no debugElement.query() é importado do platform-browser
         // const divEl: HTMLElement = fixture.nativeElement.querySelector('.dummy-component');
         const divEl = fixture.debugElement.query(By.directive(ActionDirective)).nativeElement;
         const event = new KeyboardEvent('keyup', {key: 'Enter'});
